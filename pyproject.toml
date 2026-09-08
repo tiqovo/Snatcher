@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sustech-tis-snatcher"
+version = "1.0.0"
+description = "A safe SUSTech TIS course registration helper"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "playwright>=1.46,<2",
+  "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "responses>=0.25,<1"]
+build = ["pyinstaller>=6.16,<7"]
+
+[project.scripts]
+tis-snatcher = "snatcher.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["snatcher*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

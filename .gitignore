@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.egg-info/
+.browser-profile/
+.browser-smoke/
+course-cache.json
+*.log
+build/
+dist/
+release/
+*.spec
